@@ -16,7 +16,7 @@ def run_guessing_game
 end
 
 def store_number
-  secret_number = rand(1...6)
+  secret_number = rand(6)+1
   secret_number
 end
 
@@ -43,8 +43,7 @@ def invalid_guess? (player_guess)
 end
 
 def check_guess(player_guess, secret_number)
-  binding.pry
-  if player_guess == secret_number
+  if player_guess == secret_number.to_s
     puts "You guessed the correct number!"
   elsif player_guess == "exit"
     puts "Goodbye!"
